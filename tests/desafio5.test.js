@@ -34,7 +34,7 @@ describe('Ao fazer uma requisição GET /simpsons/:id', () => {
     });
 
     it('ao fazer a requisição para rota GET /simpsons/:id deve retornar o json com um simpson', async () => {
-      const response = await axios.get('http://localhost:3000/simpson/9');
+      const response = await axios.get('http://localhost:3000/simpsons/9');
 
       expect(response.status).to.be.eq(200);
 
@@ -64,7 +64,7 @@ describe('Ao fazer uma requisição GET /simpsons/:id', () => {
     });
 
     it('ao fazer a requisição para rota GET /simpsons/:id deve retornar um erro', async () => {
-      const response = await axios.get('http://localhost:3000/simpson/999')
+      const response = await axios.get('http://localhost:3000/simpsons/999')
         .catch((err) => (err.response));
 
       expect(response.status).to.be.eq(404);
